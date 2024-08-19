@@ -1,0 +1,410 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap');
+
+:root {
+    --tmp_border: 2px solid black;
+    --tmp-border1: 1px solid black;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    padding-top: 72px;
+    /* Adjust padding to match nav height */
+    /* Ensures content starts below navbar */
+    position: relative;
+    /* Required to make the z-index on nav work correctly */
+    overflow-x: hidden;
+}
+
+@media (min-width: 768px) {
+    .btnspan {
+        display: none;
+    }
+
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        height: 72px;
+        background-color: #ffffff;
+        z-index: 1000;
+        /* Ensure nav is above other elements */
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        /* Optional shadow for nav */
+        transition: top 0.3s;
+    }
+
+    nav .logo {
+        font-weight: 600;
+        color: #000;
+        /* Fixed color from #fff to #000 */
+        text-decoration: none;
+        margin-left: 43px;
+        padding: 20px;
+    }
+
+    nav ul {
+        display: flex;
+        list-style: none;
+        gap: 24px;
+        margin-right: 20px;
+        /* Added margin to right for spacing */
+    }
+
+    nav ul li a {
+        font-weight: 600;
+        text-decoration: none;
+        color: #000;
+    }
+
+    nav ul li a:hover {
+        color: rgb(255, 40, 40);
+    }
+
+    nav button {
+        background-color: rgb(255, 40, 40);
+        border: none;
+        cursor: pointer;
+        padding: 4px 15px;
+        border-radius: 2px;
+        color: #fff;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        font-weight: 600;
+        margin-right: 20px;
+        /* Added margin to right for button spacing */
+    }
+
+    .container {
+        width: 1125px;
+        margin: 0 auto;
+        margin-top: 100px;
+        /* Adjusted to ensure it clears the fixed navbar */
+        display: flex;
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+        padding: 0 20px;
+        /* Added padding for spacing */
+    }
+
+    /* Keyframes for sliding and fading in from left */
+    @keyframes slideInFromLeft {
+        0% {
+            transform: translateX(-100%);
+            opacity: 0;
+        }
+
+        100% {
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+
+    /* Keyframes for sliding and fading in from right */
+    @keyframes slideInFromRight {
+        0% {
+            transform: translateX(100%);
+            opacity: 0;
+        }
+
+        100% {
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+
+    .leftside {
+        width: 595px;
+        height: 613px;
+        display: flex;
+        flex-direction: column;
+        opacity: 0;
+        /* Start off transparent */
+        animation: slideInFromLeft 1s ease-out forwards;
+        /* Apply animation */
+    }
+
+    .leftside h1 {
+        width: 595px;
+        height: 306px;
+        color: #000;
+        /* Fixed color from #fff to #000 */
+        font-size: 108px;
+        font-weight: 800;
+        line-height: 102px;
+    }
+
+    .leftside p {
+        width: 400px;
+        height: 91px;
+        color: #5A5959;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 24px;
+        margin: 40px 0;
+    }
+
+    .buttons {
+        width: 331px;
+        height: 41px;
+        display: flex;
+        gap: 40px;
+    }
+
+    .btn1 {
+        width: 150px;
+        font-size: 24px;
+        height: 41px;
+        padding: 6px 16px;
+        cursor: pointer;
+        background-color: #D01C28;
+        line-height: 29.05px;
+        font-weight: 500;
+        color: #fff;
+        gap: 10px;
+    }
+
+    .btn1:hover {
+        background-color: #000;
+        color: #fff;
+    }
+
+    .btn2:hover {
+        background-color: #000;
+        color: #fff;
+    }
+
+    .btn2 {
+        width: 141px;
+        line-height: 29.05px;
+        height: 41px;
+        cursor: pointer;
+        border: var(--tmp-border1);
+        padding: 6px 16px;
+        font-size: 20px;
+        font-weight: 600;
+        background-color: #fff;
+        color: #000;
+        gap: 10px;
+    }
+
+    .rightside img {
+        width: 530px;
+        height: 487.06px;
+        box-shadow: 32px 32px 24px 0 rgba(0, 0, 0, 0.3);
+        /* Changed to rgba */
+        opacity: 0;
+        /* Start off transparent */
+        animation: slideInFromRight 1s ease-out forwards;
+        /* Apply animation */
+    }
+}
+
+@media (max-width: 766px) {
+    body {
+        padding-top: 72px;
+        /* Adjust padding to match nav height */
+    }
+
+    /* Keyframes for sliding and fading in from left */
+    @keyframes slideInFromLeft {
+        0% {
+            transform: translateX(-100%);
+            opacity: 0;
+        }
+
+        100% {
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+
+    /* Keyframes for sliding and fading in from right */
+    @keyframes slideInFromRight {
+        0% {
+            transform: translateX(100%);
+            opacity: 0;
+        }
+
+        100% {
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+
+    nav .logo {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+    }
+
+    nav button {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+    }
+
+    .btnspan {
+        position: absolute;
+        top: 0;
+        right: 10px;
+        transition: 0.4s;
+        font-size: 30px;
+        cursor: pointer;
+        display: block;
+    }
+
+    nav {
+        position: absolute;
+        top: 0;
+        display: flex;
+        background-color: aliceblue;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    nav ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: rgba(0, 0, 0, 0.8);
+        width: 0;
+        height: 100vh;
+        position: fixed;
+        z-index: 1000;
+        top: 0;
+        transition: width 0.6s;
+    }
+
+    .aftermenu {
+        width: 80%;
+        height: 100vh;
+        transition: 0.6s;
+        z-index: 1000;
+    }
+
+    .after {
+        display: block;
+    }
+
+    nav ul li {
+        width: 100%;
+        text-align: center;
+        padding: 15px 0;
+        margin: 0;
+    }
+
+    nav ul li a {
+        text-decoration: none;
+        color: #fff;
+        padding: 35px 0;
+        width: auto;
+        display: none;
+        /* Initial state hidden */
+        text-align: center;
+    }
+
+    nav ul.show li a {
+        display: block;
+        /* Show when nav has class `show` */
+    }
+
+    nav button {
+        background-color: rgb(255, 40, 40);
+        border: none;
+        cursor: pointer;
+        margin-right: 60px;
+        padding: 4px 15px;
+        border-radius: 2px;
+        color: #fff;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        font-weight: 600;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        margin-top: 80px;
+        /* Added margin to ensure no overlap */
+    }
+
+    .leftside {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-top: 50px;
+        animation: slideInFromLeft 1s ease-out forwards;
+    }
+
+    .leftside h1 {
+        font-size: 50px;
+        font-weight: 800;
+        line-height: 50px;
+        text-align: center;
+    }
+
+    .leftside p {
+        width: 100%;
+        color: #5A5959;
+        text-align: center;
+        margin: 20px 0;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 24px;
+    }
+
+    .buttons {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .btn1 {
+        width: 150px;
+        font-size: 24px;
+        height: 41px;
+        padding: 6px 16px;
+        background-color: #D01C28;
+        line-height: 29.05px;
+        cursor: pointer;
+        font-weight: 500;
+        color: #fff;
+        gap: 10px;
+    }
+
+    .btn2 {
+        width: 141px;
+        line-height: 29.05px;
+        height: 41px;
+        cursor: pointer;
+        border: var(--tmp-border1);
+        padding: 6px 16px;
+        background-color: #fff;
+        color: #000;
+        gap: 10px;
+    }
+
+    .rightside img {
+        width: 100%;
+        height: auto;
+        box-shadow: 32px 32px 24px 0 rgba(0, 0, 0, 0.3);
+        /* Changed to rgba */
+        animation: slideInFromRight 1s ease-out forwards;
+    }
+}
